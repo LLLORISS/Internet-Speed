@@ -5,22 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Перевірка швидкості інтернету</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
 	<header>
-		
-	</header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="logo.png" alt="Логотип" />
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="http://cso.com.ua/">ЦСО</a></li>
+                    <li><a href="#">Про нас</a></li>
+                    <li><a href="#">Контакти</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
     <h1>Тест швидкості</h1>
-    <button id="start-test">Почати перевірку</button>
-    <div id="result">
-        <p>Швидкість завантаження: <span id="download-speed">--</span> Mbps</p>
-        <p>Швидкість відвантаження: <span id="upload-speed">--</span> Mbps</p>
-        <p>Затримка: <span id="ping">--</span> ms</p>
-    </div>
+    <div class="content">
+	    <div id="result">
+	        <p>Швидкість завантаження: <span id="download-speed">--</span> Mbps</p>
+	        <p>Швидкість відвантаження: <span id="upload-speed">--</span> Mbps</p>
+	        <p>Затримка: <span id="ping">--</span> ms</p>
+
+	        <button id="start-test">Почати перевірку</button>
+	    </div>
+	</div>
 
     <footer>
-        Створено для практики. Інтернет-провайдер 2024.
+        <p>Створено для практики. м.Золочів Центр Сервісного Обслуговування 2024.</p>
+        <p><a href="#">Політика конфіденційності</a> | <a href="#">Умови користування</a></p>
     </footer>
+
 
     <script src="script.js"></script>
 </body>
