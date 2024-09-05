@@ -118,6 +118,48 @@ button:active {
     height: auto;
 }
 
+.tooltip-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.tooltip-icon {
+    cursor: pointer;
+    font-size: 18px;
+    color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 50%;
+    padding: 5px 10px;
+    text-align: center;
+    display: inline-block;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    width: 500px;
+    background-color: #333;
+    color: #fff;
+    text-align: left;
+    border-radius: 5px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1000;
+    top: 100%;
+    left: 100%;
+    transform: translateX(10px) translateY(10px);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+.tooltip-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+
 footer {
     background-color: #007bff;
     color: white;
@@ -193,6 +235,30 @@ nav ul li a {
 
 nav ul li a:hover {
     text-decoration: underline;
+}
+
+.contact-info {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: center;
+}
+
+.contact-info h2 {
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.contact-info .contact-item {
+    margin-bottom: 10px;
 }
 
 #auto-refresh-timer{

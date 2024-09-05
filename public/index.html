@@ -9,22 +9,28 @@
 </head>
 <body>
 	<header>
-        <div class="header-container">
-            <div class="logo">
-                <img src="logo.png" alt="Логотип" />
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="http://cso.com.ua/" target="_blanc">ЦСО</a></li>
-                    <li><a href="#">Про нас</a></li>
-                    <li><a href="#">Контакти</a></li>
-                </ul>
-            </nav>
+    <div class="header-container">
+        <div class="logo">
+            <img src="logo.png" alt="Логотип" />
         </div>
-    </header>
+        <nav>
+            <ul>
+                <li><a href="http://cso.com.ua/" target="_blanc">ЦСО</a></li>
+                <li><a href="#">Про нас</a></li>
+                <li><a href="contacts.html">Контакти</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
     <div class="content">
 	    <div id="result">
             <h1>Тест швидкості</h1>
+            <div class="tooltip-container">
+                <span class="tooltip-icon">?</span>
+                <div class="tooltip-text">Увага! Результати тесту дуже наближені.
+                    Принцип дії тесту полягає у вимірюванні часу, який витрачається на скачування з сервера маленького тестового файла: від моменту натискання кнопки "Почати перевірку" до моменту закінчення завантаження. Оскільки на виконання тесту впливає багато факторів, його результати слід сприймати виключно як орієнтовні.
+                </div>
+            </div>
             <button class="collapse-btn" onclick="toggleCollapse()">&#9660;</button>
             <p>Швидкість завантаження: <span id="download-speed">--</span></p>
             <p>Швидкість відвантаження: <span id="upload-speed">--</span></p>
