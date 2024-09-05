@@ -22,26 +22,21 @@
             </nav>
         </div>
     </header>
-    <h1>Тест швидкості</h1>
     <div class="content">
 	    <div id="result">
-	        <p>Швидкість завантаження: <span id="download-speed">--</span></p>
-	        <p>Швидкість відвантаження: <span id="upload-speed">--</span></p>
-	        <p>Затримка: <span id="ping">--</span></p>
-
+            <h1>Тест швидкості</h1>
+            <button class="collapse-btn" onclick="toggleCollapse()">&#9660;</button>
+            <p>Швидкість завантаження: <span id="download-speed">--</span></p>
+            <p>Швидкість відвантаження: <span id="upload-speed">--</span></p>
+            <p>Затримка: <span id="ping">--</span></p>
             <div class="test-buttons">
-	           <button id="start-test">Почати перевірку</button>
-               <button id="stop-test" style="display: none;">Зупинити перевірку</button>
+                <button id="start-test">Почати перевірку</button>
+                <button id="stop-test" style="display: none;">Зупинити перевірку</button>
             </div>
-            <p id="auto-refresh-timer" style="display: none;">До наступного автоматичного оновлення: <span id="timer-seconds">--</span> секунд</p>
-            <p id="progress-wrapper" style="display: none;">
-    <span id="progress-container">
-        <span id="progress-bar"></span>
-    </span>
-</p>
-	    </div>
+            <p id="auto-refresh-timer" style="display: none;">До автоматичного оновлення: <span id="timer-seconds">--</span> секунд</p>
+            <p id="progress-wrapper" style="display: none;"><span id="progress-container"><span id="progress-bar"></span></span></p>
+        </div>
 	</div>
-
     <footer>
         <p>Створено для практики. м.Золочів Центр Сервісного Обслуговування 2024.</p>
         <p><a href="#">Політика конфіденційності</a> | <a href="#">Умови користування</a></p>

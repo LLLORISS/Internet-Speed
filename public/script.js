@@ -46,7 +46,7 @@ document.getElementById('start-test').addEventListener('click', async function()
 document.getElementById('stop-test').addEventListener('click', function() {
     clearInterval(refreshIntervalId);
     progressBar.style.width = '0%';
-    progressContainer.style.display = 'none';
+    progressWrapper.style.display = 'none';
     document.getElementById('auto-refresh-timer').style.display = 'none';
     document.getElementById('start-test').style.display = 'inline';
     document.getElementById('stop-test').style.display = 'none';
@@ -152,5 +152,20 @@ async function deleteAllFiles() {
         }
     } catch (e) {
         console.error('Error deleting files:', e);
+    }
+}
+
+function toggleCollapse() {
+    const resultDiv = document.getElementById('result');
+    const collapseBtn = resultDiv.querySelector('.collapse-btn');
+    
+    if (resultDiv.classList.contains('collapsed')) {
+        resultDiv.classList.remove('collapsed');
+        resultDiv.classList.add('expanded');
+        collapseBtn.innerHTML = '&#9650;';
+    } else {
+        resultDiv.classList.remove('expanded');
+        resultDiv.classList.add('collapsed');
+        collapseBtn.innerHTML = '&#9660;';
     }
 }
