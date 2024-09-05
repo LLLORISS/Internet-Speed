@@ -1,8 +1,33 @@
-/* Загальні стилі */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Додає обчислення бордера та паддінгу до ширини/висоти */
+    box-sizing: border-box;
+}
+
+#progress-wrapper {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#progress-container {
+    display: inline-block;
+    width: 80%; 
+    max-width: 600px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#progress-bar {
+    display: block;
+    height: 20px;
+    width: 0;
+    background-color: #007bff;
+    transition: width 0.1s;
+    border-radius: 5px;
 }
 
 html, body {
@@ -42,7 +67,6 @@ button {
     border-radius: 5px;
 }
 
-
 #result {
     margin-top: 15px;
     font-size: 18px;
@@ -72,7 +96,6 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Шапка */
 header {
     background-color: #007bff;
     color: white;
@@ -92,7 +115,6 @@ header h1 {
     margin: 0;
 }
 
-/* Логотип */
 .logo {
     font-size: 36px;
     font-weight: bold;
@@ -101,17 +123,16 @@ header h1 {
 }
 
 .logo img {
-    height: 100px; /* Основний розмір логотипу */
+    height: 100px;
     width: auto;
 }
 
-/* Навігаційне меню */
 nav ul {
     list-style-type: none;
     padding: 0;
     margin: 10px 0 0;
     display: flex;
-    gap: 20px; /* Простір між пунктами меню */
+    gap: 20px; 
 }
 
 nav ul li {
@@ -129,7 +150,11 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Адаптивність */
+#auto-refresh-timer{
+    opacity: 25%;
+    padding: 15px;
+}
+
 @media (max-width: 768px) {
     .header-container {
         flex-direction: column;
