@@ -25,9 +25,11 @@
     </div>
 </header>
     <div class="content">
-        <h1>Контакти</h1>
         <div class="contact-info">
             <h2>Контактні номери</h2>
+            <div class="contact-item">
+                <p><strong>Контактний номер:</strong> +38 (098) 3958180</p>
+            </div>
             <div class="contact-item">
                 <p><strong>Гаряча лінія:</strong> +38 (098) 0000000</p>
             </div>
@@ -40,15 +42,37 @@
             <h2>Інші джерела зв'язку</h2>
             <div class="contact-item">
                 <p><strong><i class="fab fa-telegram"></i> Telegram: </strong><a href="https://web.telegram.org/a/#803266647" target="_blanc">@muts.jpg</a></p>
+            <div class="contact-item">
                 <p><strong><i class="fab fa-instagram"></i> Instagram: </strong><a href="https://www.instagram.com/muts.jpg/" target="_blanc">@muts.jpg</a></p>
             </div>
+            <div class="contact-item">
+                <p><strong><i class="fa-solid fa-envelope-open"></i> Gmail: </strong><a href ="https://mail.google.com/mail/u/0/#inbox?compose=DmwnWrRlRHzWLnjnRxCgbbPfrmGqLscgsPClLNtgGPxNtQHNtqrmSCNxCPCrxGjDbGjDLsRwpmtL" target="_blanc">nazikmuz@gmail.com</a></p>
+            </div>
+            </div>
         </div>
-    </div>
+
+        <div class="contact-info">
+            <h2>Форма для зворотнього зв'язку</h2>
+            <button class="collapse-btn" onclick="toggleContactForm()">&#9660;</button>
+            <div class="contact-form-container">
+                <form id="myForm" action="/submit-form" method="post">
+                    <label for="name">Ваше ім'я:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Електронна пошта:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Повідомлення:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+
+                    <button type="submit">Надіслати</button>
+                </form>
+            </div>
+        </div>
     <footer>
         <p>Створено для практики. м.Золочів Центр Сервісного Обслуговування 2024.</p>
         <p><a href="#">Політика конфіденційності</a> | <a href="#">Умови користування</a></p>
     </footer>
-
 
     <script src="script.js"></script>
 </body>

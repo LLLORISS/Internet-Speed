@@ -21,6 +21,10 @@ if (!fs.existsSync('uploads')) {
     fs.mkdirSync('uploads');
 }
 
+if (!fs.existsSync('forms')) {
+    fs.mkdirSync('forms');
+}
+
 const uploadsDir = path.join(__dirname, 'uploads');
 const largeFilePath = path.join(__dirname, 'large-file.bin');
 const fileSize = 100 * 1024 * 1024; // 100 MB
@@ -33,9 +37,30 @@ if (!fs.existsSync(largeFilePath)) {
     });
 }
 
+app.use(express.urlencoded({ extended: true }));
+
 app.post('/upload', upload.single('file'), (req, res) => {
     console.log('Received file with size:', req.file.size, 'bytes');
     res.send('File uploaded successfully!');
+});
+
+app.post('/submit-form', (req, res) => {
+    const { name, email, message } = req.body;
+    if (!name || !email || !message) {
+        return res.status(400).send('All fields are required.');
+    }
+
+    const fileName = `form-${Date.now()}.txt`;
+    const filePath = path.join(__dirname, 'forms', fileName);
+    const fileContent = `Name: ${name}\nEmail: ${email}\nMessage: ${message}`;
+
+    fs.writeFile(filePath, fileContent, err => {
+        if (err) {
+            console.error('Error writing file:', err);
+            return res.status(500).send('Error saving form data.');
+        }
+        res.send('Form submitted successfully!');
+    });
 });
 
 app.delete('/delete-files', (req, res) => {

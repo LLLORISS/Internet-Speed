@@ -1,7 +1,7 @@
 let abortController;
 let refreshIntervalId;
 const refreshSeconds = 5;
-const progressWrapper = document.getElementById('progress-wrapper')
+const progressWrapper = document.getElementById('progress-wrapper');
 const progressBar = document.getElementById('progress-bar');
 const progressContainer = document.getElementById('progress-container');
 
@@ -169,3 +169,43 @@ function toggleCollapse() {
         collapseBtn.innerHTML = '&#9660;';
     }
 }
+
+function toggleContactForm() {
+    const formContainer = document.querySelector('.contact-form-container');
+    const collapseBtn = document.querySelector('.contact-info .collapse-btn');
+    
+    if (formContainer.classList.contains('collapsed')) {
+        formContainer.classList.remove('collapsed');
+        formContainer.classList.add('expanded');
+        collapseBtn.innerHTML = '&#9650;';
+    } else {
+        formContainer.classList.remove('expanded');
+        formContainer.classList.add('collapsed');
+        collapseBtn.innerHTML = '&#9660;';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('myForm').addEventListener('submit', async function(event) {
+        event.preventDefault();
+
+        const formData = new FormData(this);
+
+        try {
+            const response = await fetch('/submit-form', {
+                method: 'POST',
+                body: formData
+            });
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok.');
+            }
+
+            const result = await response.text();
+            document.getElementById('formResponse').innerText = 'Форма надіслана успішно: ' + result;
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            document.getElementById('formResponse').innerText = 'Помилка при надсиланні форми.';
+        }
+    });
+});
