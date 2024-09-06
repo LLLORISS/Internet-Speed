@@ -4,7 +4,7 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin: 20px auto;
-    max-width: 600px;
+    max-width: 1000px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -119,3 +119,10 @@ body.dark-theme .contact-info button:hover {
 body.dark-theme .contact-info button:active {
     background-color: #0066cc;
 }
+
+.contact-info p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #555;
+}
+
