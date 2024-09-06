@@ -4,6 +4,20 @@ const refreshSeconds = 5;
 const progressWrapper = document.getElementById('progress-wrapper');
 const progressBar = document.getElementById('progress-bar');
 const progressContainer = document.getElementById('progress-container');
+const themeToggleButton = document.getElementById('theme-toggle');
+const initialTheme = localStorage.getItem('theme') || 'light';
+
+if (initialTheme === 'dark') {
+    document.body.classList.add('dark-theme');
+    themeToggleButton.textContent = '🌞';
+}
+
+themeToggleButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark-theme');
+    const theme = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
+    localStorage.setItem('theme', theme);
+    themeToggleButton.textContent = theme === 'dark' ? '🌞' : '🌙';
+});
 
 document.getElementById('start-test').addEventListener('click', async function() {
     document.getElementById('download-speed').textContent = 'Тестування...';

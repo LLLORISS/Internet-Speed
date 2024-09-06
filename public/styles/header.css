@@ -4,6 +4,10 @@ header {
     padding: 10px 0;
 }
 
+body.dark-theme header {
+    background-color: #004080;
+}
+
 .header-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -22,6 +26,10 @@ header h1 {
     font-weight: bold;
     color: #fff;
     text-transform: uppercase;
+}
+
+body.dark-theme .logo {
+    color: #66b2ff;
 }
 
 .logo img {
@@ -47,6 +55,38 @@ nav ul li a {
     font-weight: bold;
 }
 
+body.dark-theme nav ul li a {
+    color: #66b2ff;
+}
+
 nav ul li a:hover {
     text-decoration: underline;
+}
+
+body.dark-theme nav ul li a:hover {
+    text-decoration: underline;
+}
+
+
+.theme-toggle-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ffffff;
+    transition: color 0.3s;
+}
+
+body.dark-theme .theme-toggle-button {
+    color: #66b2ff;
+}
+
+#theme-toggle:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+#theme-toggle {
+    border: none;
+    background: none;
 }

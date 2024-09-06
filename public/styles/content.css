@@ -26,7 +26,6 @@
 }
 
 #result {
-    background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 10px;
@@ -39,6 +38,35 @@
 
 #result p {
     margin: 15px;
+}
+
+body.light-theme #progress-container {
+    background-color: #e0e0e0;
+}
+
+body.light-theme #result {
+    background-color: #ffffff;
+    color: #333;
+}
+
+body.light-theme .collapse-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+body.dark-theme #progress-container {
+    background-color: #333333;
+}
+
+body.dark-theme #result {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-theme .collapse-btn {
+    background-color: #444;
+    color: white;
 }
 
 .collapsed {
@@ -54,13 +82,12 @@
     position: absolute;
     top: 10px;
     right: 10px;
-    background-color: #007bff;
-    color: white;
     border: none;
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .collapse-btn:focus {
